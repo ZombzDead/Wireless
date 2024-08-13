@@ -1,5 +1,6 @@
 ### 1. Capture Wireless Traffic:
   # Start Wireshark
+    $ sudo wireshark &
   # Start airodump-ng and log captured traffic to a file
     $ sudo airodump-ng wlan0 -w output-file-prefix
   # While capturing traffic with airodump, check that traffic to see if AP's support WPS.

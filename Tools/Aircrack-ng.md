@@ -16,3 +16,21 @@ Airodump-ng
     
     To specify what channels to hop through:
     $ sudo airodump-ng --band bg mon0   (this will tell the Card to hop through the specified band) 
+
+### MDK4
+Proof-of-concept tool to exploit common IEEE 802.11 protocol weaknesses.
+    https://github.com/aircrack-ng/mdk4
+    
+Initial Install
+
+    $ sudo apt-get install pkg-config libnl-3-dev libnl-genl-3-dev libpcap-dev
+    $ sudo git clone https://github.com/aircrack-ng/mdk4.git
+    $ cd mdk4 
+    $ make 
+    $ sudo make install
+
+Usage
+
+    $ sudo mdk4 <interface> <attack_mode> [attack_options]
+    $ sudo mdk4 <interface in> <interface out> <attack_mode> [attack_options]
+

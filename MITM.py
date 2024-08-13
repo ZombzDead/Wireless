@@ -12,7 +12,7 @@
 
 ### Bettercap MITM ###
   $ sudo bettercap -iface eth0 -eval "set wifi.interface wlan0; wifi.recon on"
-  Other options for MITM in Bettercap:
+  # Other options for MITM in Bettercap:
     ARP Spoofing - Bettercap > arp.spoof module (Not needed when client connected to rogue AP because attacker already in position of MitM)
     DNS Spoofing - Bettercap > dns.spoof module
     Credentials Sniffing - Bettercap > net.sniff module

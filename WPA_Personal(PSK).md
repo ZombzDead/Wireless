@@ -1,13 +1,17 @@
-### 802.11 Sniffing WPA/WPA2 with PSK - 802.11 authentication is a process whereby the access point either accepts or rejects the identity of a radio NIC. The NIC begins the process by sending an authentication frame containing its identity to the access point. With open system authentication (the default), the radio NIC sends only one authentication frame, and the access point responds with an authentication frame as a response indicating acceptance (or rejection). Beacon frames are transmitted periodically to announce the presence of a wireless network and contain all information about it(data rates, channels, security ciphers, key management, etc.).
+## 802.11 Sniffing WPA/WPA2 with PSK
+802.11 authentication is a process whereby the access point either accepts or rejects the identity of a radio NIC. The NIC begins the process by sending an authentication frame containing its identity to the access point. With open system authentication (the default), the radio NIC sends only one authentication frame, and the access point responds with an authentication frame as a response indicating acceptance (or rejection). Beacon frames are transmitted periodically to announce the presence of a wireless network and contain all information about it(data rates, channels, security ciphers, key management, etc.).
 
 WPA/WPA2 Attack Process:
-  1. Start and Deauthenticate with WPA/WPA2 Protected WLAN client by using WLAN tools Such as Hotspotter, Airsnarf, Karma, etc.
-  2. If the Client is Deaauthenticated, then sniff the traffic and check the status of captured EAPOL Handshake.
-  3. If the client is not Deauthenticate then do it again.
-  4. Check whether the EAPOL handshake is captured or Not.
-  5. Once you captured the EAPOL handshake, then perform a PSK Dictionary attack using coWPAtty, Aircrack-ng to gain confidential information.
-  6. Add Time-memory trade-off method (Rainbow tables) also known as WPA-PSK Precomputation attack for cracking WPA/2 passphrase. Genpmk can be used to generate pre-computed hashes.
-  7. If it’s Failed then Deauthenticate again and try to capture again and redo the above steps.
+
+    1. Start and Deauthenticate with WPA/WPA2 Protected WLAN client by using WLAN tools.
+    2. If the client is Deaauthenticated, then sniff the traffic and check the status of the captured EAPOL Handshake.
+    3. If the client did not Deauthenticate then do it again.
+    4. Check whether the EAPOL handshake is captured or not.
+    5. Once you captured the EAPOL handshake, then perform a PSK Dictionary attack using coWPAtty and 
+       Aircrack-ng to gain confidential information.
+       
+    6. Add time-memory trade-off method (Rainbow tables) also known as WPA-PSK Precomputation attack for cracking WPA/2 passphrase.
+    7. If the client failed then deauthenticate again and try to capture and redo the above steps.
 
 WPS PIN Attack:
     Known PINs + Generation Algorithms

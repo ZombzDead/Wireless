@@ -2,7 +2,7 @@
     Hardware > USB Controller > Switch USB Compatibility to USB 3.1
 
 ### Enable Wifi Adapter
-
+    https://docs.alfa.com.tw/Product/AWUS036ACM/
 Plug in Wireless Card
 
     $ ifconfig -a    (to locate the wlan0)
@@ -46,3 +46,25 @@ Or
     Place Card into "Monitoring Mode"
     $ sudo airmon-ng start wlan0   (will give message that monitor mode enable on mon0)
     $ sudo airmon-ng    (will show wlan0 and mon0 interfaces)
+
+### Alfa Adapter Troubleshooting
+    https://kali.download/kali/pool/main/l/linux/ 
+    Install the following:
+    $ sudo dpkg -i linux-headers-6.5.0-kali3-common_6.5.6-1kali1_all.deb
+    $ sudo dpkg -i linux-kbuild-6.5.0-kali3_6.5.6-1kali1_amd64.deb
+    $ sudo dpkg -i linux-compiler-gcc-13-x86_6.5.6-1kali1_amd64.deb 
+    $ sudo dpkg -i linux-headers-6.5.0-kali3-amd64_6.5.6-1kali1_amd64.deb  
+    
+    $ cd /rt18814au
+    $ Sudo make
+    
+    After installing firmware and drivers reattempt to setup the WLAN interface (Reboot may be required)
+
+## Tips
+ IDENTIFY AND CRACK ENCRYPTION - Use the access point's MAC address to find the manufacturer. Then search by manufacturer or ESSID exploits and default wireless keys for that model.
+ 
+ Wireless Scanning Tools - Airsnarf, Airsnort, BdAddr, Bluesnarfwer, Btscanner, FakeAP, GFI LANguard, WifiTAP, GPSdrive, Kismet, and macchanger
+
+ Additional Softwared - Raspberry Pi (https://www.raspberrypi.com/software/) & Pineapple (https://soliloquyforthefallen.net/?cat=109)
+ 
+ 

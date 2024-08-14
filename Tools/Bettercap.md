@@ -27,7 +27,19 @@ Initial Install
       $ sudo apt install golang git build-essential libpcap-dev libusb-1.0-0-dev libnetfilter-queue-dev
       $ go get -u github.com/bettercap/bettercap
 
+Access Web UI
+
+    sudo bettercap -eval "caplets.update; ui.update; q"
+    
+    Sudo bettercap -caplet http-ui (Will provide the URL to utilize for Bettercap)
+     Select the link provided. 
+     Login Page for Bettercap will showup - input Username and Password
+    
+ Edit the default credentials in /usr/local/share/bettercap/caplets/http-ui.cap
  
+    Set api.rest.username <Create Username>
+    Set api.rest.password <Create Password>
+
 Bettercap Commands 
 
     wifi.recon on              (Start 802.11 wireless base stations discovery and handshakes/PMKID capture)
